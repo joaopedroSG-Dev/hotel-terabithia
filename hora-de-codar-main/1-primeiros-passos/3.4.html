@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício 3.4</title>
+</head>
+<body>
+
+    <script>
+        // Lendo os dois números inteiros
+        let numero1 = parseInt(prompt("Digite o primeiro número inteiro:"));
+        let numero2 = parseInt(prompt("Digite o segundo número inteiro (deve ser maior que o primeiro):"));
+
+        // Validação: enquanto o primeiro NÃO for menor que o segundo, pede o segundo número novamente
+        while (isNaN(numero1) || isNaN(numero2) || numero1 >= numero2) {
+            alert("Erro! O primeiro número deve ser obrigatoriamente menor que o segundo.");
+            numero1 = parseInt(prompt("Digite o primeiro número inteiro novamente:"));
+            numero2 = parseInt(prompt("Digite o segundo número inteiro (maior que o primeiro):"));
+        }
+
+        let soma = 0;
+        let quantidade = 0;
+
+        // O laço começa no numero1 e vai até o numero2 (inclusive)
+        for (let i = numero1; i <= numero2; i++) {
+            soma += i;        // Adiciona o valor atual de 'i' à soma
+            quantidade++;     // Incrementa a quantidade de números processados
+        }
+
+        // Cálculo da média
+        let media = soma / quantidade;
+
+        // Exibição dos resultados
+        console.log(`Números no intervalo: de ${numero1} até ${numero2}`);
+        console.log(`Soma total: ${soma}`);
+        console.log(`Quantidade de números: ${quantidade}`);
+        console.log(`Média: ${media}`);
+
+        document.write(`<p>A média dos números inteiros de <strong>${numero1}</strong> até <strong>${numero2}</strong> é: <strong>${media.toFixed(2)}</strong></p>`);
+    </script>
+
+</body>
+</html>

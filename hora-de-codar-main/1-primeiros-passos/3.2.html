@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício 3.2</title>
+</head>
+<body>
+
+    <script>
+        // Lendo o primeiro valor
+        let valor1 = parseFloat(prompt("Digite o primeiro valor:"));
+
+        // Lendo o segundo valor
+        let valor2 = parseFloat(prompt("Digite o segundo valor (deve ser maior que zero):"));
+
+        // Enquanto o segundo valor for menor ou igual a zero (ou um número inválido), pede novamente
+        while (isNaN(valor2) || valor2 <= 0) {
+            valor2 = parseFloat(prompt("Valor inválido! Digite um segundo valor MAIOR que zero:"));
+        }
+
+        // Calcula a divisão
+        let resultado = valor1 / valor2;
+
+        // Exibe o resultado no console e na tela
+        console.log(`${valor1} / ${valor2} = ${resultado}`);
+        alert(`O resultado da divisão de ${valor1} por ${valor2} é: ${resultado}`);
+    </script>
+
+</body>
+</html>

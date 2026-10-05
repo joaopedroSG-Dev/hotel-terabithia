@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício 3.3</title>
+</head>
+<body>
+
+    <script>
+        let soma = 0;
+        let quantidade = 0;
+
+        // O laço começa em 15 e vai até 100 (inclusive)
+        for (let i = 15; i <= 100; i++) {
+            soma += i;       // Soma o número atual ao total (soma = soma + i)
+            quantidade++;    // Conta +1 número processado
+        }
+
+        // Cálculo da média aritmética
+        let media = soma / quantidade;
+
+        // Exibe o resultado no console e na tela
+        console.log(`Soma total: ${soma}`);
+        console.log(`Quantidade de números: ${quantidade}`);
+        console.log(`Média aritmética: ${media}`);
+
+        document.write(`<p>A média aritmética dos números inteiros de 15 a 100 é: <strong>${media}</strong></p>`);
+    </script>
+
+</body>
+</html>

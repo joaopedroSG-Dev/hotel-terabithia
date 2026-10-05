@@ -1,0 +1,57 @@
+
+# Hora De Codar: Um Novo Dia Para Codar
+
+Hoje vamos dar os primeiros passos no fascinante mundo das estruturas de dados! Para começar, exploraremos um dos elementos mais importantes dessa área: os arrays. Prepare-se para encarar os desafios abaixo e descobrir como eles funcionam na prática.
+
+### 1 - Estudantes
+Crie um programa onde o usuário possa cadastrar estudantes sem limites, e, em seguida, Se o usuário digitar "PARE" o programa deve exibir a quantidade de estudantes cadastrados e a lista com cada um deles.
+
+### 2 - Planetas
+Exiba uma lista de planetas do sistema solar ("Mercúrio", "Vênus", "Terra", "Marte", "Júpiter", "Saturno", "Urano", "Netuno" e "Plutão") para o usuário. Em seguida, peça ao usuário para digitar o nome de um planeta. Verifique se o planeta que o usuário informou está na lista e informe ao usuário.
+
+### 3 - Compras
+Vamos criar uma lista de compras.
+
+- Crie uma array de frutas, exiba-a ao usuário e, em seguida, peça ao usuário para digitar o nome de uma das frutas.
+- Caso a fruta esteja no array, remova-a e exiba a mensagem "Fruta foi retirada da lista".
+Peça novamente para o usuário digitar o nome de uma fruta para ser removida.
+- Sempre que o usuário procurar por uma fruta que não está no array exiba a mensagem "Fruta indisponível no nosso mercado".
+- Quando o usuário digitar "PARE", exiba a lista de frutas restantes.
+- Quando o array não possuir mais itens dentro de si, escreva "Lista de compras finalizada".
+
+
+### 4 - Agenda de Contatos (Exemplo pronto)
+Crie um programa que funcione como uma agenda de contatos.
+
+O usuário pode cadastrar contatos informando nome e telefone (armazene como objetos em um array).
+
+O programa deve permitir que o usuário busque um contato pelo nome.
+
+Se o contato existir, exiba o telefone; se não existir, exiba "Contato não encontrado".
+
+O usuário também pode remover um contato pelo nome.
+
+Quando o usuário digitar "LISTAR", exiba todos os contatos cadastrados (nome e telefone).
+
+Quando o usuário digitar "SAIR", encerre o programa exibindo a mensagem "Agenda encerrada. Total de contatos: X".
+
+```
+Digite um comando (ADICIONAR, BUSCAR, REMOVER, LISTAR, SAIR): ADICIONAR
+Nome: Ana
+Telefone: 99999-8888
+Contato adicionado!
+
+Digite um comando: BUSCAR
+Nome: Ana
+Telefone: 99999-8888
+
+Digite um comando: REMOVER
+Nome: Ana
+Contato removido!
+
+Digite um comando: LISTAR
+Nenhum contato cadastrado.
+
+Digite um comando: SAIR
+Agenda encerrada. Total de contatos: 0
+```

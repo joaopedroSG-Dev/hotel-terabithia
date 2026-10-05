@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício 3 - Lista de Compras</title>
+</head>
+<body>
+
+    <script>
+        // Array inicial de frutas
+        let frutas = ["Maçã", "Banana", "Laranja", "Uva", "Manga", "Morango"];
+
+        // Exibe a lista inicial de frutas no alerta para o usuário
+        alert("Lista inicial de frutas disponíveis:\n" + frutas.join(", "));
+
+        while (frutas.length > 0) {
+            let escolha = prompt(`Frutas disponíveis: ${frutas.join(", ")}\n\nDigite o nome de uma fruta para remover (ou 'PARE' para encerrar):`);
+
+            // Se o usuário clicar em Cancelar ou digitar "PARE"
+            if (escolha === null || escolha.toUpperCase() === "PARE") {
+                break;
+            }
+
+            let frutaDigitada = escolha.trim();
+
+            // Encontra o índice da fruta no array (ignorando maiúsculas/minúsculas)
+            let indice = frutas.findIndex(f => f.toLowerCase() === frutaDigitada.toLowerCase());
+
+            if (indice !== -1) {
+                // Remove a fruta pelo índice encontrado
+                frutas.splice(indice, 1);
+                alert("Fruta foi retirada da lista.");
+            } else {
+                alert("Fruta indisponível no nosso mercado.");
+            }
+        }
+
+        // Mensagem de encerramento dependendo do motivo da saída do laço
+        document.write("<h2>Status da Lista de Compras</h2>");
+
+        if (frutas.length === 0) {
+            alert("Lista de compras finalizada.");
+            document.write("<p><strong>Lista de compras finalizada.</strong> Não restam mais frutas!</p>");
+        } else {
+            document.write("<p>Você encerrou a seleção. Frutas restantes na lista:</p>");
+            document.write("<ul>");
+            for (let i = 0; i < frutas.length; i++) {
+                document.write(`<li>${frutas[i]}</li>`);
+            }
+            document.write("</ul>");
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício 3.6</title>
+</head>
+<body>
+
+    <script>
+        let soma = 0;
+        let totalNotas = 6;
+
+        // Laço para ler exatamente 6 notas
+        for (let i = 1; i <= totalNotas; i++) {
+            let nota = parseFloat(prompt(`Digite a ${i}ª nota (de 0 a 10):`));
+
+            // Validação: garante que a nota seja um número entre 0 e 10
+            while (isNaN(nota) || nota < 0 || nota > 10) {
+                nota = parseFloat(prompt(`Nota inválida! Digite a ${i}ª nota novamente (apenas valores de 0 a 10):`));
+            }
+
+            soma += nota; // Acumula a nota válida na variável soma
+        }
+
+        // Cálculo da média simples
+        let media = soma / totalNotas;
+
+        // Exibição dos resultados
+        console.log(`Soma total das notas: ${soma.toFixed(2)}`);
+        console.log(`Média simples: ${media.toFixed(2)}`);
+
+        document.write(`<h2>Resultado Final</h2>`);
+        document.write(`<p>A média simples das 6 notas é: <strong>${media.toFixed(2)}</strong></p>`);
+    </script>
+
+</body>
+</html>

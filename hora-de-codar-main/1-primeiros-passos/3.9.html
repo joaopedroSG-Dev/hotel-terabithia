@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício 3.9</title>
+</head>
+<body>
+
+    <script>
+        let dentroIntervalo = 0;
+        let foraIntervalo = 0;
+        let totalValores = 10;
+
+        for (let i = 1; i <= totalValores; i++) {
+            let numero = parseFloat(prompt(`Digite o ${i}º valor:`));
+
+            // Validação para garantir que o usuário digitou um número válido
+            while (isNaN(numero)) {
+                numero = parseFloat(prompt(`Valor inválido! Digite o ${i}º valor novamente:`));
+            }
+
+            // Verifica se está no intervalo de 24 a 42 (inclusive)
+            if (numero >= 24 && numero <= 42) {
+                dentroIntervalo++;
+            } else {
+                foraIntervalo++;
+            }
+        }
+
+        // Exibição dos resultados no console e na tela
+        console.log(`Valores DENTRO do intervalo [24, 42]: ${dentroIntervalo}`);
+        console.log(`Valores FORA do intervalo: ${foraIntervalo}`);
+
+        document.write(`<h2>Resultado do Intervalo (24 a 42)</h2>`);
+        document.write(`<p>Quantidade de números <strong>DENTRO</strong> do intervalo: <strong>${dentroIntervalo}</strong></p>`);
+        document.write(`<p>Quantidade de números <strong>FORA</strong> do intervalo: <strong>${foraIntervalo}</strong></p>`);
+    </script>
+
+</body>
+</html>

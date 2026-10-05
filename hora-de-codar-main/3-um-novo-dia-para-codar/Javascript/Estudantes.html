@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro de Estudantes</title>
+</head>
+<body>
+
+    <script>
+        // Array para armazenar os nomes dos estudantes
+        let estudantes = [];
+        let nome;
+
+        // Laço de repetição contínuo
+        while (true) {
+            nome = prompt("Digite o nome do estudante (ou digite PARE para encerrar):");
+
+            // Se o usuário cancelar ou digitar PARE (independente de maiúsculas/minúsculas)
+            if (nome === null || nome.toUpperCase() === "PARE") {
+                break; // Sai do laço
+            }
+
+            // Garante que não sejam cadastrados nomes em branco
+            if (nome.trim() !== "") {
+                estudantes.push(nome.trim());
+            } else {
+                alert("Por favor, digite um nome válido.");
+            }
+        }
+
+        // Exibição dos resultados
+        document.write(`<h2>Estudantes Cadastrados</h2>`);
+        document.write(`<p>Total de estudantes cadastrados: <strong>${estudantes.length}</strong></p>`);
+
+        if (estudantes.length > 0) {
+            document.write("<ul>");
+            for (let i = 0; i < estudantes.length; i++) {
+                document.write(`<li>${estudantes[i]}</li>`);
+            }
+            document.write("</ul>");
+        } else {
+            document.write("<p>Nenhum estudante foi cadastrado.</p>");
+        }
+
+        // Também mostra no console do navegador
+        console.log(`Total: ${estudantes.length}`);
+        console.log("Lista de Estudantes:", estudantes);
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício 4 - Agenda de Contatos</title>
+</head>
+<body>
+
+    <script>
+        // Array para armazenar os objetos de contato
+        let agenda = [];
+        let rodando = true;
+
+        while (rodando) {
+            let comando = prompt("Digite um comando (ADICIONAR, BUSCAR, REMOVER, LISTAR, SAIR):");
+
+            // Se o usuário clicar em Cancelar, encerra o programa
+            if (comando === null) {
+                break;
+            }
+
+            // Normaliza o comando para maiúsculas e remove espaços extras
+            comando = comando.trim().toUpperCase();
+
+            switch (comando) {
+                case "ADICIONAR":
+                    let nomeAdd = prompt("Nome:");
+                    let telAdd = prompt("Telefone:");
+
+                    if (nomeAdd && telAdd) {
+                        // Cria e adiciona um objeto no array
+                        agenda.push({
+                            nome: nomeAdd.trim(),
+                            telefone: telAdd.trim()
+                        });
+                        alert("Contato adicionado!");
+                    } else {
+                        alert("Nome e telefone são obrigatórios!");
+                    }
+                    break;
+
+                case "BUSCAR":
+                    let nomeBusca = prompt("Nome:");
+                    if (nomeBusca) {
+                        // Busca o contato pelo nome (ignorando maiúsculas/minúsculas)
+                        let encontrado = agenda.find(c => c.nome.toLowerCase() === nomeBusca.trim().toLowerCase());
+
+                        if (encontrado) {
+                            alert(`Nome: ${encontrado.nome}\nTelefone: ${encontrado.telefone}`);
+                        } else {
+                            alert("Contato não encontrado");
+                        }
+                    }
+                    break;
+
+                case "REMOVER":
+                    let nomeRemover = prompt("Nome:");
+                    if (nomeRemover) {
+                        // Encontra o índice do contato na lista
+                        let indice = agenda.findIndex(c => c.nome.toLowerCase() === nomeRemover.trim().toLowerCase());
+
+                        if (indice !== -1) {
+                            agenda.splice(indice, 1);
+                            alert("Contato removido!");
+                        } else {
+                            alert("Contato não encontrado");
+                        }
+                    }
+                    break;
+
+                case "LISTAR":
+                    if (agenda.length === 0) {
+                        alert("Nenhum contato cadastrado.");
+                    } else {
+                        let listaTexto = "--- LISTA DE CONTATOS ---\n";
+                        for (let i = 0; i < agenda.length; i++) {
+                            listaTexto += `${i + 1}. Nome: ${agenda[i].nome} | Telefone: ${agenda[i].telefone}\n`;
+                        }
+                        alert(listaTexto);
+                    }
+                    break;
+
+                case "SAIR":
+                    rodando = false;
+                    break;
+
+                default:
+                    alert("Comando inválido! Digite: ADICIONAR, BUSCAR, REMOVER, LISTAR ou SAIR.");
+                    break;
+            }
+        }
+
+        // Mensagem final exibida na tela e no alerta
+        alert(`Agenda encerrada. Total de contatos: ${agenda.length}`);
+        
+        document.write("<h2>Agenda Encerrada</h2>");
+        document.write(`<p>Total de contatos cadastrados: <strong>${agenda.length}</strong></p>`);
+        
+        if (agenda.length > 0) {
+            document.write("<ul>");
+            agenda.forEach(contato => {
+                document.write(`<li><strong>${contato.nome}</strong>: ${contato.telefone}</li>`);
+            });
+            document.write("</ul>");
+        }
+    </script>
+
+</body>
+</html>

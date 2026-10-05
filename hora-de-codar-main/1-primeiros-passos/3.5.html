@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício 3.5 - Corrigido</title>
+</head>
+<body>
+
+    <script>
+        let alunosAprovados = 0;
+        let resposta;
+
+        do {
+            // Lendo e validando a 1ª nota
+            let nota1 = parseFloat(prompt("Digite a 1ª nota do aluno (0 a 10):"));
+            while (isNaN(nota1) || nota1 < 0 || nota1 > 10) {
+                nota1 = parseFloat(prompt("Nota inválida! Digite a 1ª nota novamente (0 a 10):"));
+            }
+
+            // Lendo e validando a 2ª nota
+            let nota2 = parseFloat(prompt("Digite a 2ª nota do aluno (0 a 10):"));
+            while (isNaN(nota2) || nota2 < 0 || nota2 > 10) {
+                nota2 = parseFloat(prompt("Nota inválida! Digite a 2ª nota novamente (0 a 10):"));
+            }
+
+            // CORREÇÃO AQUI: Parênteses para somar antes de dividir por 2
+            let media = (nota1 + nota2) / 2;
+
+            // Verificação da nota de aprovação (9.5)
+            if (media >= 9.5) {
+                alunosAprovados++;
+                alert(`Média: ${media.toFixed(1)} - Aluno APROVADO! 🎉`);
+            } else {
+                alert(`Média: ${media.toFixed(1)} - Aluno REPROVADO.`);
+            }
+
+            // Pergunta para repetir o ciclo
+            resposta = prompt("Calcular a média de outro aluno? (S/N)").toUpperCase();
+
+        } while (resposta === "S" || resposta === "SIM");
+
+        // Exibição do total de alunos aprovados
+        document.write(`<h2>Programa encerrado!</h2>`);
+        document.write(`<p>Total de alunos aprovados: <strong>${alunosAprovados}</strong></p>`);
+        console.log(`Quantidade de alunos aprovados: ${alunosAprovados}`);
+    </script>
+
+</body>
+</html>

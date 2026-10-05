@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício 2.9</title>
+</head>
+<body>
+
+    <script>
+        // Pede o ano de nascimento ao usuário
+        let anoNascimento = parseInt(prompt("Digite o ano do seu nascimento (ex: 2005):"));
+        let anoAtual = 2026;
+
+        // Calcula a idade simples (sem considerar o mês)
+        let idade = anoAtual - anoNascimento;
+
+        console.log(`Sua idade no ano atual é: ${idade} anos.`);
+
+        // Estrutura condicional para verificar o direito ao voto
+        if (idade < 16) {
+            alert(`Você tem ${idade} anos e AINDA NÃO pode votar.`);
+        } else if ((idade >= 16 && idade < 18) || idade >= 70) {
+            alert(`Você tem ${idade} anos. Seu voto é OPCIONAL.`);
+        } else {
+            alert(`Você tem ${idade} anos. Seu voto é OBRIGATÓRIO.`);
+        }
+    </script>
+
+</body>
+</html>

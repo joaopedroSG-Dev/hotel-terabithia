@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício 2 - Planetas</title>
+</head>
+<body>
+
+    <script>
+        // Lista de planetas do sistema solar
+        let planetas = [
+            "Mercúrio", 
+            "Vênus", 
+            "Terra", 
+            "Marte", 
+            "Júpiter", 
+            "Saturno", 
+            "Urano", 
+            "Netuno", 
+            "Plutão"
+        ];
+
+        // Exibe a lista completa de planetas na tela
+        document.write("<h2>Lista de Planetas:</h2>");
+        document.write("<ul>");
+        for (let i = 0; i < planetas.length; i++) {
+            document.write(`<li>${planetas[i]}</li>`);
+        }
+        document.write("</ul>");
+
+        // Solicita o nome de um planeta ao usuário
+        let busca = prompt("Digite o nome de um planeta para verificar se ele está na lista:");
+
+        if (busca !== null && busca.trim() !== "") {
+            // Normaliza o texto digitado e os planetas da lista para comparação (ignora maiúsculas/minúsculas)
+            let buscaFormatada = busca.trim().toLowerCase();
+            let encontrado = false;
+
+            for (let i = 0; i < planetas.length; i++) {
+                if (planetas[i].toLowerCase() === buscaFormatada) {
+                    encontrado = true;
+                    break;
+                }
+            }
+
+            // Exibe a resposta baseada na busca
+            if (encontrado) {
+                alert(`O planeta "${busca}" ESTÁ na lista!`);
+                document.write(`<p style="color: green;"><strong>O planeta "${busca}" está cadastrado na lista.</strong></p>`);
+            } else {
+                alert(`O planeta "${busca}" NÃO está na lista.`);
+                document.write(`<p style="color: red;"><strong>O planeta "${busca}" não foi encontrado na lista.</strong></p>`);
+            }
+        } else {
+            alert("Nenhum nome de planeta foi informado.");
+        }
+    </script>
+
+</body>
+</html>

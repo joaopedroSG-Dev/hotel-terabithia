@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício 2.8</title>
+</head>
+<body>
+
+    <script>
+        let soma = 0;
+        let quantidadeNumeros = 4;
+
+        for (let i = 1; i <= quantidadeNumeros; i++) {
+            let numero = parseFloat(prompt(`Digite o ${i}º número (deve ser maior que 0 e menor que 10):`));
+
+            // Validação: enquanto o número for menor/igual a 0, maior/igual a 10 ou inválido (NaN), pede novamente
+            while (isNaN(numero) || numero <= 0 || numero >= 10) {
+                numero = parseFloat(prompt(`Valor inválido! Digite o ${i}º número novamente (apenas > 0 e < 10):`));
+            }
+
+            soma += numero;
+        }
+
+        // Cálculo da média
+        let media = soma / quantidadeNumeros;
+
+        // Exibição do resultado
+        console.log(`Média: ${media.toFixed(2)}`);
+
+        if (media > 5) {
+            alert(`Sua média foi ${media.toFixed(2)}. Você passou no teste`);
+        } else {
+            alert(`Sua média foi ${media.toFixed(2)}. Você não passou no teste`);
+        }
+    </script>
+
+</body>
+</html>

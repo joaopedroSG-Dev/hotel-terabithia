@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício 3.7</title>
+</head>
+<body>
+
+    <script>
+        // Lendo o valor N
+        let N = parseInt(prompt("Digite um valor para N (deve ser maior que 0):"));
+
+        // Validação: enquanto N for menor ou igual a 0 ou um valor inválido (NaN), pede novamente
+        while (isNaN(N) || N <= 0) {
+            N = parseInt(prompt("Valor inválido! Digite um número inteiro MAIOR que 0:"));
+        }
+
+        document.write(`<h2>Imprimindo números de 1 até ${N}:</h2>`);
+
+        // Laço que começa em 1 e vai até N
+        for (let i = 1; i <= N; i++) {
+            console.log(i);
+            document.write(i + "<br>");
+        }
+    </script>
+
+</body>
+</html>

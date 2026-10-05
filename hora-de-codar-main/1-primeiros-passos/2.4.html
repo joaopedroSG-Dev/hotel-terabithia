@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    var numero1 = parseFloat(prompt("Digite o primeiro número"));
+    var numero2 = parseFloat(prompt("Digite o segundo número"));
+    var numero3 = parseFloat(prompt("Digite o terceiro número"));
+    var soma;
+
+    if (numero1 < numero2 && numero1 < numero3) {
+        alert("A soma dos dois maiores números é: " + (numero2 + numero3));
+    } else if (numero2 < numero1 && numero2 < numero3) {
+        alert("A soma dos dois maiores números é: " + (numero1 + numero3));
+    } else if (numero3 < numero1 && numero3 < numero2) {
+        alert("A soma dos dois maiores números é: " + (numero1 + numero2));
+    } else {
+        alert("Os números são iguais!");
+    }
+
+
+
+</script>
+
+</body>
+</html>
